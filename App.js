@@ -9,17 +9,20 @@ import {
   Button,
 } from 'react-native'
 import Todo from './Todo'
+import { generateID as generateTodoID, toSnakeCase } from './utils/generateID'
 
 export default function App() {
   const [input, setInput] = useState('')
   const [todos, setTodos] = useState([])
 
   const addTodo = () => {
-    setTodos([input, ...todos])
+    setTodos(prevState => [input, ...prevState])
     setInput('')
   }
 
-  const todosJSX = todos.map(todo => <Todo title={todo} />)
+  const todosJSX = todos.map(todo => (
+    <Todo id={toSnakeCase(todo) + generateTodoID()} title={todo} />
+  ))
 
   return (
     <SafeAreaView>
