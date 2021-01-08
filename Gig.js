@@ -1,14 +1,15 @@
 import React from 'react'
 import { StyleSheet, View, Text } from 'react-native'
 
-const Todo = ({ title = 'Take dogs out for a walk' }) => {
+const Gig = ({ description = 'Take dogs out for a walk', amount = 1 }) => {
   return (
     <View>
-      <Text>✅ {title} </Text>
+      <Text>{description} </Text>
+      <Text>${amount} </Text>
     </View>
   )
 }
 
-export default Todo
+export default Gig
 
 const styles = StyleSheet.create({})
