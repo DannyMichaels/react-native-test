@@ -1,4 +1,8 @@
-const idMaker = () => () => Math.ceil(Math.random() * 100)
+const idMaker = () => {
+  return function () {
+    return Math.ceil(Math.random() * 100)
+  }
+}
 
 export let generateID = idMaker()
 
